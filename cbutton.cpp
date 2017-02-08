@@ -1,3 +1,7 @@
+/*=====================================================================================================
+	Minji Kim	067742122
+	OOP344A
+=======================================================================================================*/
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -13,15 +17,19 @@
 #include "cfield.h"
 #include "cbutton.h"
 
-
 using namespace cio;
-
 
 namespace cio{
 
+/*=====================================================================================================
+	 CButton constructor passes the row, col, border visibility, and border string values directly 
+	 to the CField constructor.  The CButton constructor sets the height of the field depending on 
+	 the border's visibility (3 or 1) and its width depending on the length of the string and the 
+	 border's visibility.  This constructor also passes the NULL address to the CField constructor 
+	 as the data's initial address.
+=======================================================================================================*/
 CButton::CButton(const char* str, int r, int c, bool visibility , const char* border) :
 			CField( r, c, 0, 0, (void*) NULL, visibility, border){
-
 
     allocateAndCopy(str);
 
@@ -34,17 +42,23 @@ CButton::CButton(const char* str, int r, int c, bool visibility , const char* bo
 	width(strlen(str) + 4);
 }
 
+/*=====================================================================================================
+	CButton destructor
+=======================================================================================================*/
 CButton::~CButton(){
 
-	if(data()) delete [] data();
-
+	if(data()) delete [] (char*)data();
 }
 
+/*=====================================================================================================
+	This private method allocates dynamic memory for the data at the received address and copies that 
+	data into the new memory.
+=======================================================================================================*/
 void CButton::allocateAndCopy(const char* src){
 	
 	char* Temp;
 	int field;
-	if(data()) delete [] data();
+	if(data()) delete [] (char*)data();
 	if(src){
 		setfieldlen(strlen(src)+2);
 		field = getfieldlen();
@@ -58,10 +72,12 @@ void CButton::allocateAndCopy(const char* src){
 		Temp[field]='\0';		
 		toggledata(bordered());
 	}
-	else Temp=NULL;
-	
+	else Temp=NULL;	
 }
 
+/*=====================================================================================================
+	This method changes the prefix and suffix on the label's string to [ and ] resepctively.
+=======================================================================================================*/
 void CButton::toggledata(bool mode){
 
 	char* Temp = (char*) data();
@@ -76,6 +92,10 @@ void CButton::toggledata(bool mode){
 	Temp[getfieldlen()]='\0';
 }
 
+/*=====================================================================================================
+	This method draws the button's frame according to the specified value (C_NO_FRAME) and displays 
+	its data without offset.
+=======================================================================================================*/
 void CButton::draw(int framemode){
 
 	int border=0;
@@ -85,6 +105,9 @@ void CButton::draw(int framemode){
 	display((char*)data(), absrow()+border, abscol()+border, getfieldlen());
 }
 
+/*=====================================================================================================
+	This method captures the press of the button. 
+=======================================================================================================*/
 int CButton::edit(){
 
 	int userInput;
@@ -106,11 +129,19 @@ int CButton::edit(){
 	return userInput;
 }
 
+/*=====================================================================================================
+	This method returns true.
+=======================================================================================================*/
 bool CButton::editable() const{
 
 	return true;
 }
 
+/*=====================================================================================================
+	This method deallocates the dynamic memory allocated for the button's label allocates dynamic 
+	memory for the C-style null-terminated string at the address received, copies the string into the 
+	newly allocated memory, and resets the width and the height of the button.
+=======================================================================================================*/
 void CButton::set(const void* str){
 	
 	allocateAndCopy((char*) str);
@@ -123,8 +154,5 @@ void CButton::set(const void* str){
 		height(1);
 		width(strlen((char*)data()));
 	}
-
-
-
 }
 }	// end of cio namespace
