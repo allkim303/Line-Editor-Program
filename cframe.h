@@ -1,6 +1,5 @@
 /*=====================================================================================================
-	Minji Kim	067742122
-	OOP344A
+	Allison Kim
 
 	CFrame is the concrete class that holds general information for a frame.  A frame is a rectangle
 	of variable width, height, and position defined by its top left corner and can have a border 
