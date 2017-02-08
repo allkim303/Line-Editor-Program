@@ -1,6 +1,5 @@
 /*=====================================================================================================
-	Minji Kim	067742122
-	OOP344A
+	Allison Kim
 	
 	Class CLine is a CField that holds editable data.  
 	A CLine object may or may not have a border and has an editing state. 
