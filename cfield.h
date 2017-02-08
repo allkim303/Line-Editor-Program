@@ -1,6 +1,5 @@
 /*=====================================================================================================
-	Minji Kim	067742122
-	OOP344A
+	Allison Kim
 	
 	CField is a CFrame that can access data associated with the frame.  
 	A field may or may not have a border and may or may not have a parent.  
