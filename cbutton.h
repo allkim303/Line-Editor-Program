@@ -1,6 +1,5 @@
 /*=====================================================================================================
-	Minji Kim	067742122
-	OOP344A
+	Allison Kim
 	
 	CButton is a CField that represents a clickable button.  
 	It may have a border but does not have any state.
