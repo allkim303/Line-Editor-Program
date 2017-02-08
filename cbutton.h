@@ -1,11 +1,12 @@
 /*=====================================================================================================
-	Allison Kim
+	Minji Kim	067742122
+	OOP344A
+	
+	CButton is a CField that represents a clickable button.  
+	It may have a border but does not have any state.
 =======================================================================================================*/
-
-
 #ifndef __cbutton__
 #define __cbutton__
-
 
 #include "cfield.h"
 
@@ -23,11 +24,7 @@ public:
 	int  edit();
 	bool editable() const;
 	void set(const void*);
-
-
 };
-
-
 }	// end of cio namespace
 
 #endif

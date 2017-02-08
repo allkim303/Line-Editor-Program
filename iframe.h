@@ -1,5 +1,13 @@
- #ifndef _FS_IFRAME_H_
- #define _FS_IFRAME_H_
+/*=====================================================================================================
+	Minji Kim	067742122
+	OOP344A
+
+	iFrame is the hierarchy's interface. It is an abstract base class that does not have 
+	any instance variables and an abstract base class is a class that lacks a complete implementation.
+=======================================================================================================*/
+#ifndef _FS_IFRAME_H_
+#define _FS_IFRAME_H_
+
  // iFrame Header
  // iframe.h
  //

@@ -1,4 +1,7 @@
-	
+	/*=====================================================================================================
+	Minji Kim	067742122
+	OOP344A
+=======================================================================================================*/
 #include <iostream>
 #include <cstdio>
 #include <cstring>
@@ -13,22 +16,50 @@
 
 namespace cio{
 
-CField::CField(int r , int c, int w, int h, void* d, bool v, const char* border): CFrame(r, c, w, h, v, border){
+/*=====================================================================================================
+	The CField constructor receives seven values in its parameters and passes all values except 
+	the data address to its base class constructor. 
+=======================================================================================================*/
+CField::CField(int r, int c, int width, int height, void* data, bool visibility, const char* border)
+				: CFrame(r, c, width, height, visibility, border){
 
-		if( d )		cfield_data = d;
+		if(data)	cfield_data = data;
 		else		cfield_data = NULL;
 }
 
+/*=====================================================================================================
+	This method returns the pointer to field's data.
+=======================================================================================================*/
 void* CField::data() const{
 
 	return cfield_data;
 }
 
+/*=====================================================================================================
+	This method sets the address of the field's data.
+=======================================================================================================*/
 void CField::data(void* str){
 
-	if(str)	cfield_data=str;
+	if(str)	cfield_data = str;
 	else	cfield_data = NULL;
 }
 
+/*=====================================================================================================
+	This method sets the field length.
+=======================================================================================================*/
+void CField::setfieldlen(int len){
+
+	fieldlen = len;
+
+}
+
+/*=====================================================================================================
+	This method returns the field length.
+=======================================================================================================*/
+int CField::getfieldlen(){
+
+	return fieldlen;
+
+}
 
 }	// end of cio namespace
