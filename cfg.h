@@ -1,8 +1,7 @@
 /*=====================================================================================================
-	Minji Kim	067742122
-	OOP344A
+	Allison Kim
 
-	 The cfg.h file contains the hierarchy's configuration information.
+	The cfg.h file contains the hierarchy's configuration information.
 =======================================================================================================*/
 #ifndef __cfg__
 #define __cfg__
